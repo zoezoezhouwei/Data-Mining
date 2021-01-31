@@ -20,3 +20,4 @@ plot(jitter(homewin,0.2) ~ spread, data=bballbets,
 lm0 = lm(homewin~spread.discrete, data=bballbets)
 points(fitted(lm0) ~ spread, data=bballbets, col='blue', pch=19)
 ```
+
