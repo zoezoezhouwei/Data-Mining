@@ -2,6 +2,9 @@
 
 ---
 
+![GitHub Logo](/images/logo.png)
+Format: ![Alt Text](url)
+
 ```{r setwd("/Users/weizhou/Documents/R_Learning")}
 bballbets <- read.csv("/Users/weizhou/Documents/R_Learning/bballbets.csv")
 plot(jitter(homewin,0.2) ~ spread, data=bballbets,
