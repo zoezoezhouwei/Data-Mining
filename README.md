@@ -1,9 +1,5 @@
 ---
-editor_options:
-  chunk_output_type: inline
-output:
-  html_document: default
-  pdf_document: default
+
 ---
 
 ```{r setwd("/Users/weizhou/Documents/R_Learning")}
