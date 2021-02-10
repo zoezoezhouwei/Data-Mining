@@ -286,14 +286,14 @@ highest average delay time amount.
     best_k = k[which.min(knn_test_rmse)]
     best_k
 
-    ## [1] 5
+    ## [1] 14
 
 *Find overfitting, underfitting, and “best” k*
 
     fit_status = ifelse(k < best_k, "Over", ifelse(k == best_k, "Best", "Under"))
     best_k
 
-    ## [1] 5
+    ## [1] 14
 
 *Summarize results*
 
@@ -318,7 +318,7 @@ highest average delay time amount.
     knnop1 = knnreg(price ~ mileage, data=sclass350_train, k=best_k)
     rmse(knnop1, sclass350_test)
 
-    ## [1] 10712.46
+    ## [1] 11189.31
 
     sclass350_test = sclass350_test %>%
       mutate(s350_pred = predict(knnop1, sclass350_test))
@@ -377,14 +377,14 @@ highest average delay time amount.
     best_k = k[which.min(knn_test_rmse)]
     best_k
 
-    ## [1] 13
+    ## [1] 12
 
 *Find overfitting, underfitting, and “best” k*
 
     fit_status = ifelse(k < best_k, "Over", ifelse(k == best_k, "Best", "Under"))
     best_k
 
-    ## [1] 13
+    ## [1] 12
 
 *Summarize results*
 
@@ -409,7 +409,7 @@ highest average delay time amount.
     knnop2 = knnreg(price ~ mileage, data=sclass65_train, k=best_k)
     modelr::rmse(knnop2, sclass65_test)
 
-    ## [1] 26207.37
+    ## [1] 18021.6
 
     sclass65_test = sclass65_test %>%
       mutate(s65_pred = predict(knnop2, sclass65_test))
@@ -430,10 +430,11 @@ Since I randomly split the training set and test set, every time I get
 different k value, for both trim.
 
 However, the trim of 65AMG tend to have a larger optimal k, because its
-sample size is smaller than trim 350. When the sample size is smaller,
-there are less points in a same region, and thus we’ll get higher bias
-and lower variance. In order to reduce the bias, we need a larger
-optimal k to get more information.
+sample size is smaller than trim 350. In the group of trim 350, the
+sample size is larger, and there are more points in a same region, and
+thus we’ll get higher bias and lower variance. In order to reduce the
+bias, we need to shrink the region and get a smaller optimal k. Vise
+versa, the group of 65AMG tends to have a larger best k.
 
 In addition, we also need to consider other facts as well, such as the
 balance of the data. For example, when more data is on one side, and
