@@ -5,7 +5,7 @@
     ggplot(data = gas) +
       geom_boxplot ( aes(x = Competitors, y = Price ))
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-2-1.png)
+![](./figure-markdown_strict/unnamed-chunk-2-1.png)
 
 We want to see if gas stations charge more if they lack direct
 competition in sight. From the graph, we can see the statement is
@@ -17,7 +17,7 @@ the group with competitors
     ggplot (data = gas) +
       geom_point ( mapping = aes(x= Income, y = Price ))
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-3-1.png)
+![](./figure-markdown_strict/unnamed-chunk-3-1.png)
 
 We want to observe whether it is true that the richer the area, the
 higher the gas price. From the result, we can see the statement is not
@@ -34,7 +34,7 @@ higher than many other areas with higher incomes.
       geom_col(mapping = aes(x=Name, y=Name_mean),position='dodge',color="pink") +
       coord_flip()
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-4-1.png)
+![](./figure-markdown_strict/unnamed-chunk-4-1.png)
 
 We want to see if shell charges more than other brands. By comparing the
 average price of different brand, we got that the statement isn’t
@@ -50,7 +50,7 @@ Conoco，Lamar Corner Store，Texaco.
 
     ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-5-1.png)
+![](./figure-markdown_strict/unnamed-chunk-5-1.png)
 
 We want to see whether gas stations at stoplights charge more. From the
 group of graphs, we can definitely tell that the stations with stoplight
@@ -61,7 +61,7 @@ have higher prices. The statement is surpported.
     ggplot(data = gas) +
       geom_boxplot ( aes(x = Highway, y = Price ))
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-6-1.png)
+![](./figure-markdown_strict/unnamed-chunk-6-1.png)
 We want to see if gas stations with direct highway access charge more.
 By comparing the median of the two groups of stations with or without
 direct highway access, we can see the statement is supported. The
@@ -81,7 +81,7 @@ stations with highway access charge more.
       geom_line(aes(x=hr,y=hr_average)) +
       scale_x_continuous(breaks = 0:24) 
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-7-1.png)
+![](./figure-markdown_strict/unnamed-chunk-7-1.png)
 
 In the graph, the x-axis is different time o’clock in one day. Y-axis
 means the average count of total bike rentals in that hour, including
@@ -109,7 +109,7 @@ at different time.
       scale_x_continuous(breaks = 0:24) +
       facet_wrap(~workingday) 
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-8-1.png)
+![](./figure-markdown_strict/unnamed-chunk-8-1.png)
 
 In the two graphs, the x-axis is different time o’clock in one day.
 Y-axis means the average count of total bike rentals in that hour,
@@ -138,7 +138,7 @@ peak times with higher price.
       scale_x_continuous() +
       facet_wrap(~workingday) 
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-9-1.png)
+![](./figure-markdown_strict/unnamed-chunk-9-1.png)
 
 In the two graphs, the x-axis is three weather codes in one day. Here is
 the explanation for the codes: 1: Clear, Few clouds, Partly cloudy,
@@ -189,7 +189,7 @@ different carriers?
            x="Month",
            fill="Departure/Arrival")
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-10-1.png)
+![](./figure-markdown_strict/unnamed-chunk-10-1.png)
 
 For statistics, we are using average deplayed arrival time to see in
 which situation, the flight is more likely to delay.
@@ -225,7 +225,7 @@ highest average delay time amount.
         ggplot() + 
             geom_point(mapping = aes(x = mileage, y = price, colour=trim)) 
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-12-1.png)
+![](./unnamed-chunk-12-1.png)
 
 *Subset two datasets*
 
@@ -240,7 +240,7 @@ highest average delay time amount.
     ggplot(data = sclass65) + 
       geom_point(mapping = aes(x = mileage, y = price))  
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-14-1.png)
+![](./figure-markdown_strict/unnamed-chunk-14-1.png)
 
 #### Part 1- Group of Trim 350
 
@@ -311,7 +311,7 @@ Define KNN function for different k
       geom_point(mapping = aes(x=k,y=Test_RMSE),color='blue', size=0.3)+
       scale_x_continuous(breaks=seq(from=1,to=333, by=10))
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-24-1.png)
+![](./figure-markdown_strict/unnamed-chunk-24-1.png)
 
 *Based on the best k, plot the fitted values*
 
@@ -327,11 +327,11 @@ Define KNN function for different k
       geom_point(mapping = aes(x = mileage, y = price), color= 'blue', alpha=0.7) 
     p_test
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-25-1.png)
+![](./figure-markdown_strict/unnamed-chunk-25-1.png)
 
     p_test + geom_line(aes(x = mileage, y = s350_pred), color='red', size=0.5)
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-25-2.png)
+![](./figure-markdown_strict/unnamed-chunk-25-2.png)
 
 #### Part 2- Group of 65
 
@@ -402,7 +402,7 @@ Define KNN function for different k
       geom_point(mapping = aes(x=k,y=Test_RMSE),color='blue', size=0.3)+
       scale_x_continuous(breaks=seq(from=1,to=234, by=10))
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-35-1.png)
+![](./figure-markdown_strict/unnamed-chunk-35-1.png)
 
 *Based on the optimal k, plot the fitted values*
 
@@ -418,11 +418,11 @@ Define KNN function for different k
       geom_point(mapping = aes(x = mileage, y = price), color= 'blue', alpha=0.7) 
     p_test
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-36-1.png)
+![](./figure-markdown_strict/unnamed-chunk-36-1.png)
 
     p_test + geom_line(aes(x = mileage, y = s65_pred), color='red', size=0.5)
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-36-2.png)
+![](./figure-markdown_strict/unnamed-chunk-36-2.png)
 
 #### Part 3 Which trim yields a larger optimal value of K? Why?
 
