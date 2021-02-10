@@ -259,7 +259,7 @@ highest average delay time amount.
 
     k = c(1:333)
 
-Define KNN function for different k
+*Define KNN function for different k*
 
     #knn1 = knnreg(price ~ mileage, data=sclass350_train, k=1)
     #rmse(knn1, sclass350_test)
@@ -286,14 +286,14 @@ Define KNN function for different k
     best_k = k[which.min(knn_test_rmse)]
     best_k
 
-    ## [1] 17
+    ## [1] 5
 
 *Find overfitting, underfitting, and “best” k*
 
     fit_status = ifelse(k < best_k, "Over", ifelse(k == best_k, "Best", "Under"))
     best_k
 
-    ## [1] 17
+    ## [1] 5
 
 *Summarize results*
 
@@ -318,7 +318,7 @@ Define KNN function for different k
     knnop1 = knnreg(price ~ mileage, data=sclass350_train, k=best_k)
     rmse(knnop1, sclass350_test)
 
-    ## [1] 9757.045
+    ## [1] 10712.46
 
     sclass350_test = sclass350_test %>%
       mutate(s350_pred = predict(knnop1, sclass350_test))
@@ -377,14 +377,14 @@ Define KNN function for different k
     best_k = k[which.min(knn_test_rmse)]
     best_k
 
-    ## [1] 7
+    ## [1] 13
 
 *Find overfitting, underfitting, and “best” k*
 
     fit_status = ifelse(k < best_k, "Over", ifelse(k == best_k, "Best", "Under"))
     best_k
 
-    ## [1] 7
+    ## [1] 13
 
 *Summarize results*
 
@@ -409,7 +409,7 @@ Define KNN function for different k
     knnop2 = knnreg(price ~ mileage, data=sclass65_train, k=best_k)
     modelr::rmse(knnop2, sclass65_test)
 
-    ## [1] 20071.36
+    ## [1] 26207.37
 
     sclass65_test = sclass65_test %>%
       mutate(s65_pred = predict(knnop2, sclass65_test))
@@ -429,15 +429,19 @@ Define KNN function for different k
 Since I randomly split the training set and test set, every time I get
 different k value, for both trim.
 
-However, the trim of 350 might have a larger optimal k, because the
-total sample size is bigger than trim 65 AMG. When the sample size is
-smaller, we need a relatively smaller optimal. In that case, there will
-be more error.
+However, the trim of 65AMG tend to have a larger optimal k, because its
+sample size is smaller than trim 350. When the sample size is smaller,
+there are less points in a same region, and thus we’ll get higher bias
+and lower variance. In order to reduce the bias, we need a larger
+optimal k to get more information.
 
-In addition, we also need to consider the balance of the data. For
-example, when more data is on one side, and less data is on the other
-side, it might generate a different conclusion, like what we see in the
-situation of random sampling process.
+In addition, we also need to consider other facts as well, such as the
+balance of the data. For example, when more data is on one side, and
+less data is on the other side, it might generate a different
+conclusion, like what we see in the situation of random sampling
+process.
 
 In sum, we don’t have a exact answer to determine which optimal k is
-larger. It depends on many facts, and the answer varies accordingly.
+larger. It depends on many facts, and the answer varies accordingly. But
+if we only consider about the sample size and bias, we’ll say samples
+with smaller size have larger optimal k.
