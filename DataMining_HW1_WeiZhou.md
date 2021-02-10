@@ -5,7 +5,7 @@
     ggplot(data = gas) +
       geom_boxplot ( aes(x = Competitors, y = Price ))
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-1-1.png)
+![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-2-1.png)
 
 We want to see if gas stations charge more if they lack direct
 competition in sight. From the graph, we can see the statement is
@@ -17,7 +17,7 @@ the group with competitors
     ggplot (data = gas) +
       geom_point ( mapping = aes(x= Income, y = Price ))
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-2-1.png)
+![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-3-1.png)
 
 We want to observe whether it is true that the richer the area, the
 higher the gas price. From the result, we can see the statement is not
@@ -34,7 +34,7 @@ higher than many other areas with higher incomes.
       geom_col(mapping = aes(x=Name, y=Name_mean),position='dodge',color="pink") +
       coord_flip()
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-3-1.png)
+![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-4-1.png)
 
 We want to see if shell charges more than other brands. By comparing the
 average price of different brand, we got that the statement isn’t
@@ -50,7 +50,7 @@ Conoco，Lamar Corner Store，Texaco.
 
     ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-4-1.png)
+![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-5-1.png)
 
 We want to see whether gas stations at stoplights charge more. From the
 group of graphs, we can definitely tell that the stations with stoplight
@@ -61,7 +61,7 @@ have higher prices. The statement is surpported.
     ggplot(data = gas) +
       geom_boxplot ( aes(x = Highway, y = Price ))
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-5-1.png)
+![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-6-1.png)
 We want to see if gas stations with direct highway access charge more.
 By comparing the median of the two groups of stations with or without
 direct highway access, we can see the statement is supported. The
@@ -81,7 +81,7 @@ stations with highway access charge more.
       geom_line(aes(x=hr,y=hr_average)) +
       scale_x_continuous(breaks = 0:24) 
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-6-1.png)
+![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-7-1.png)
 
 In the graph, the x-axis is different time o’clock in one day. Y-axis
 means the average count of total bike rentals in that hour, including
@@ -109,7 +109,7 @@ at different time.
       scale_x_continuous(breaks = 0:24) +
       facet_wrap(~workingday) 
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-7-1.png)
+![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-8-1.png)
 
 In the two graphs, the x-axis is different time o’clock in one day.
 Y-axis means the average count of total bike rentals in that hour,
@@ -138,7 +138,7 @@ peak times with higher price.
       scale_x_continuous() +
       facet_wrap(~workingday) 
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-8-1.png)
+![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-9-1.png)
 
 In the two graphs, the x-axis is three weather codes in one day. Here is
 the explanation for the codes: 1: Clear, Few clouds, Partly cloudy,
@@ -189,7 +189,7 @@ different carriers?
            x="Month",
            fill="Departure/Arrival")
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-9-1.png)
+![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-10-1.png)
 
 For statistics, we are using average deplayed arrival time to see in
 which situation, the flight is more likely to delay.
@@ -216,18 +216,18 @@ highest average delay time amount.
 
 # Problem 4
 
-Prepare packages
+*Prepare packages*
 
-Plot the data and see the overall pattern
+*Plot the data and see the overall pattern*
 
     sclass %>% 
         filter(trim=="350"|trim=="65 AMG") %>% 
         ggplot() + 
             geom_point(mapping = aes(x = mileage, y = price, colour=trim)) 
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-11-1.png)
+![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-12-1.png)
 
-Subset two datasets
+*Subset two datasets*
 
     sclass350 = subset(sclass, trim == '350')
     sclass65 = subset(sclass, trim == '65 AMG')
@@ -235,22 +235,22 @@ Subset two datasets
     ggplot(data = sclass350) + 
       geom_point(mapping = aes(x = mileage, y = price))  
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-12-1.png)
+![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-13-1.png)
 
     ggplot(data = sclass65) + 
       geom_point(mapping = aes(x = mileage, y = price))  
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-13-1.png)
+![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-14-1.png)
 
 #### Part 1- Group of Trim 350
 
-Split the data into a training and a testing set.
+*Split the data into a training and a testing set*
 
     sclass350_split =  initial_split(sclass350, prop=0.8)
     sclass350_train = training(sclass350_split)
     sclass350_test  = testing(sclass350_split)
 
-Define values of k to evaluate
+*Define values of k to evaluate*
 
     count(sclass350_train)
 
@@ -269,33 +269,33 @@ Define KNN function for different k
       rmse(pred, sclass350_test)
     }
 
-Get requested train RMSEs
+*Get requested train RMSEs*
 
     knn_train_rmse = sapply(k, make_knn_pred, 
                           training = sclass350_train, 
                           predicting = sclass350_training)
 
-Get requested test RMSEs
+*Get requested test RMSEs*
 
     knn_test_rmse = sapply(k, make_knn_pred, 
                           training = sclass350_train, 
                           predicting = sclass350_test)
 
-Determine “best” k
+*Determine “best” k*
 
     best_k = k[which.min(knn_test_rmse)]
     best_k
 
-    ## [1] 16
+    ## [1] 12
 
-Find overfitting, underfitting, and “best”" k
+*Find overfitting, underfitting, and “best” k*
 
     fit_status = ifelse(k < best_k, "Over", ifelse(k == best_k, "Best", "Under"))
     best_k
 
-    ## [1] 16
+    ## [1] 12
 
-Fummarize results
+*Summarize results*
 
     knn_results = data.frame(
       k,
@@ -305,20 +305,20 @@ Fummarize results
     )
     colnames(knn_results) = c("k", "Train_RMSE", "Test_RMSE", "Fit")
 
-Display results
+*Display results*
 
-    ggplot( data=knn_results)+
+    ggplot(data=knn_results)+
       geom_point(mapping = aes(x=k,y=Test_RMSE),color='blue', size=0.3)+
       scale_x_continuous(breaks=seq(from=1,to=333, by=10))
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-23-1.png)
+![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-24-1.png)
 
-Based on the best k, plot the fitted values.
+*Based on the best k, plot the fitted values*
 
     knnop1 = knnreg(price ~ mileage, data=sclass350_train, k=best_k)
     rmse(knnop1, sclass350_test)
 
-    ## [1] 11123.31
+    ## [1] 8715.151
 
     sclass350_test = sclass350_test %>%
       mutate(s350_pred = predict(knnop1, sclass350_test))
@@ -327,22 +327,22 @@ Based on the best k, plot the fitted values.
       geom_point(mapping = aes(x = mileage, y = price), color= 'blue', alpha=0.7) 
     p_test
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-24-1.png)
+![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-25-1.png)
 
     p_test + geom_line(aes(x = mileage, y = s350_pred), color='red', size=0.5)
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-24-2.png)
+![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-25-2.png)
 
 #### Part 2- Group of 65
 
-Split the data into a training and a testing set.
+*Split the data into a training and a testing set*
 
     sclass65 = subset(sclass, trim == '65 AMG')
     sclass65_split =  initial_split(sclass65, prop=0.8)
     sclass65_train = training(sclass65_split)
     sclass65_test  = testing(sclass65_split)
 
-Define values of k to evaluate
+*Define values of k to evaluate*
 
     count(sclass65_train)
 
@@ -351,7 +351,7 @@ Define values of k to evaluate
 
     k = c(1:234)
 
-Define KNN functions for different k
+*Define KNN functions for different k*
 
     #knn1 = knnreg(price ~ mileage, data=sclass65_train, k=1)
     #rmse(knn1, sclass65_test)
@@ -360,33 +360,33 @@ Define KNN functions for different k
       rmse(pred, sclass65_test)
     }
 
-Get requested train RMSEs
+*Get requested train RMSEs*
 
     knn_train_rmse = sapply(k, make_knn_pred, 
                           training = sclass65_train, 
                           predicting = sclass65_train)
 
-Get requested test RMSEs
+*Get requested test RMSEs*
 
     knn_test_rmse = sapply(k, make_knn_pred, 
                           training = sclass65_train, 
                           predicting = sclass65_test)
 
-Determine “best” k
+*Determine “best” k*
 
     best_k = k[which.min(knn_test_rmse)]
     best_k
 
-    ## [1] 13
+    ## [1] 29
 
-Find overfitting, underfitting, and “best”" k
+*Find overfitting, underfitting, and “best” k*
 
     fit_status = ifelse(k < best_k, "Over", ifelse(k == best_k, "Best", "Under"))
     best_k
 
-    ## [1] 13
+    ## [1] 29
 
-Summarize results
+*Summarize results*
 
     knn_results = data.frame(
       k,
@@ -396,20 +396,20 @@ Summarize results
     )
     colnames(knn_results) = c("k", "Train_RMSE", "Test_RMSE", "Fit?")
 
-Display results
+*Display results*
 
     ggplot( data=knn_results)+
       geom_point(mapping = aes(x=k,y=Test_RMSE),color='blue', size=0.3)+
       scale_x_continuous(breaks=seq(from=1,to=234, by=10))
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-33-1.png)
+![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-35-1.png)
 
-Based on the optimal k, plot the fitted values.
+*Based on the optimal k, plot the fitted values*
 
     knnop2 = knnreg(price ~ mileage, data=sclass65_train, k=best_k)
     modelr::rmse(knnop2, sclass65_test)
 
-    ## [1] 25977.42
+    ## [1] 20721.33
 
     sclass65_test = sclass65_test %>%
       mutate(s65_pred = predict(knnop2, sclass65_test))
@@ -418,23 +418,26 @@ Based on the optimal k, plot the fitted values.
       geom_point(mapping = aes(x = mileage, y = price), color= 'blue', alpha=0.7) 
     p_test
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-34-1.png)
+![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-36-1.png)
 
     p_test + geom_line(aes(x = mileage, y = s65_pred), color='red', size=0.5)
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-34-2.png)
+![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-36-2.png)
 
 #### Part 3 Which trim yields a larger optimal value of K? Why?
 
-Which trim yields a larger optimal value of K? Why do you think this is?
 Since I randomly split the training set and test set, every time I get
-different k value, for both trim. However, the trim of 350 might have a
-larger optimal k, because the total sample size is bigger than trim 65
-AMG. When the sample size is smaller, we need a relatively smaller
-optimal. In that case, there will be more error. In addition, we also
-need to consider the balance of the data. For example, when more data is
-on one side, and less data is on the other side, it might generate a
-different conclusion, like what we see in the situation of random
-sampling process. In sum, we don’t have a exact answer to determine
-which optimal k is larger. It depends on many facts, and the answer
-varies accordingly.
+different k value, for both trim.
+
+However, the trim of 350 might have a larger optimal k, because the
+total sample size is bigger than trim 65 AMG. When the sample size is
+smaller, we need a relatively smaller optimal. In that case, there will
+be more error.
+
+In addition, we also need to consider the balance of the data. For
+example, when more data is on one side, and less data is on the other
+side, it might generate a different conclusion, like what we see in the
+situation of random sampling process.
+
+In sum, we don’t have a exact answer to determine which optimal k is
+larger. It depends on many facts, and the answer varies accordingly.
