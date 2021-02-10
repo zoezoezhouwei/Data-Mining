@@ -6,7 +6,7 @@ in sight (boxplot).
     ggplot(data = gas) +
       geom_boxplot ( aes(x = Competitors, y = Price ))
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-1-1.png)
+![](./figure-markdown_strict/unnamed-chunk-1-1.png)
 We want to see if gas stations charge more if they lack direct
 competition in sight. From the graph, we can see the statement is
 supported, since the median price for no-competitor group is higher than
@@ -17,7 +17,7 @@ the group with competitors
     ggplot (data = gas) +
       geom_point ( mapping = aes(x= Income, y = Price ))
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-2-1.png)
+![](./figure-markdown_strict/unnamed-chunk-2-1.png)
 We want to observe whether it is true that the richer the area, the
 higher the gas price. From the result, we can see the statement is not
 supported by the data. In the area with lowest income, the price is
@@ -33,7 +33,7 @@ higher than many other areas with higher incomes.
       geom_col(mapping = aes(x=Name, y=Name_mean),position='dodge',color="pink") +
       coord_flip()
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-3-1.png)
+![](./figure-markdown_strict/unnamed-chunk-3-1.png)
 We want to see if shell charges more than other brands. By comparing the
 average price of different brand, we got that the statement isn’t
 supported by the data. There are obviously some other brand have higher
@@ -48,7 +48,7 @@ Conoco，Lamar Corner Store，Texaco.
 
     ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-4-1.png)
+![](./figure-markdown_strict/unnamed-chunk-4-1.png)
 We want to see whether gas stations at stoplights charge more. From the
 group of graphs, we can definitely tell that the stations with stoplight
 have higher prices. The statement is surpported.
@@ -58,7 +58,7 @@ have higher prices. The statement is surpported.
     ggplot(data = gas) +
       geom_boxplot ( aes(x = Highway, y = Price ))
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-5-1.png)
+![](./figure-markdown_strict/unnamed-chunk-5-1.png)
 We want to see if gas stations with direct highway access charge more.
 By comparing the median of the two groups of stations with or without
 direct highway access, we can see the statement is supported. The
@@ -78,7 +78,7 @@ stations with highway access charge more.
       geom_line(aes(x=hr,y=hr_average)) +
       scale_x_continuous(breaks = 0:24) 
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-6-1.png)
+![](./figure-markdown_strict/unnamed-chunk-6-1.png)
 In the graph, the x-axis is different time o’clock in one day. Y-axis
 means the average count of total bike rentals in that hour, including
 both casual and registered users. The graph describes the distribution
@@ -105,7 +105,7 @@ at different time.
       scale_x_continuous(breaks = 0:24) +
       facet_wrap(~workingday) 
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-7-1.png)
+![](./figure-markdown_strict/unnamed-chunk-7-1.png)
 In the two graphs, the x-axis is different time o’clock in one day.
 Y-axis means the average count of total bike rentals in that hour,
 including both casual and registered users. The left graph is
@@ -133,7 +133,7 @@ peak times with higher price.
       scale_x_continuous() +
       facet_wrap(~workingday) 
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-8-1.png)
+![](./figure-markdown_strict/unnamed-chunk-8-1.png)
 In the two graphs, the x-axis is three weather codes in one day. Here is
 the explanation for the codes: 1: Clear, Few clouds, Partly cloudy,
 Partly cloudy 2: Mist + Cloudy, Mist + Broken clouds, Mist + Few clouds,
@@ -196,7 +196,7 @@ different carriers?
            x="Month",
            fill="Departure/Arrival")
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-9-1.png)
+![](./figure-markdown_strict/unnamed-chunk-9-1.png)
 For statistics, we are using average deplayed arrival time to see in
 which situation, the flight is more likely to delay. Based on the
 results, we can see that three carriers have higher likelihood of delay,
@@ -226,7 +226,7 @@ amount.
         ggplot() + 
             geom_point(mapping = aes(x = mileage, y = price, colour=trim)) 
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-11-1.png)
+![](./figure-markdown_strict/unnamed-chunk-11-1.png)
 
 Subset two datasets
 
@@ -236,12 +236,12 @@ Subset two datasets
     ggplot(data = sclass350) + 
       geom_point(mapping = aes(x = mileage, y = price))  
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-12-1.png)
+![](./figure-markdown_strict/unnamed-chunk-12-1.png)
 
     ggplot(data = sclass65) + 
       geom_point(mapping = aes(x = mileage, y = price))  
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-13-1.png)
+![](./figure-markdown_strict/unnamed-chunk-13-1.png)
 
 ## Part 1- Group of 350
 
@@ -312,7 +312,7 @@ Split the data into a training and a testing set.
       geom_point(mapping = aes(x=k,y=Test_RMSE),color='blue', size=0.3)+
       scale_x_continuous(breaks=seq(from=1,to=333, by=10))
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-23-1.png)
+![](./figure-markdown_strict/unnamed-chunk-23-1.png)
 \# When k=12 as the best can, we can plot the fitted values.
 
     knnop1 = knnreg(price ~ mileage, data=sclass350_train, k=best_k)
@@ -327,11 +327,11 @@ Split the data into a training and a testing set.
       geom_point(mapping = aes(x = mileage, y = price), color= 'blue', alpha=0.7) 
     p_test
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-24-1.png)
+![](./figure-markdown_strict/unnamed-chunk-24-1.png)
 
     p_test + geom_line(aes(x = mileage, y = s350_pred), color='red', size=0.5)
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-24-2.png)
+![](./figure-markdown_strict/unnamed-chunk-24-2.png)
 
 ##### When trim is 65 AMG
 
@@ -404,7 +404,7 @@ Split the data into a training and a testing set.
       geom_point(mapping = aes(x=k,y=Test_RMSE),color='blue', size=0.3)+
       scale_x_continuous(breaks=seq(from=1,to=234, by=10))
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-33-1.png)
+![](./figure-markdown_strict/unnamed-chunk-33-1.png)
 
 # When k= as the best can, we can plot the fitted values.
 
@@ -420,11 +420,11 @@ Split the data into a training and a testing set.
       geom_point(mapping = aes(x = mileage, y = price), color= 'blue', alpha=0.7) 
     p_test
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-34-1.png)
+![](./figure-markdown_strict/unnamed-chunk-34-1.png)
 
     p_test + geom_line(aes(x = mileage, y = s65_pred), color='red', size=0.5)
 
-![](DataMining_HW1_WeiZhou_files/figure-markdown_strict/unnamed-chunk-34-2.png)
+![](./figure-markdown_strict/unnamed-chunk-34-2.png)
 Which trim yields a larger optimal value of K? Why do you think this is?
 Since I randomly split the training set and test set, every time I get
 different k value, for both trim. However, the trim of 350 might have a
