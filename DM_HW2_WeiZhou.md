@@ -56,7 +56,7 @@
                      fireplaces + bathrooms + rooms + heating + fuel + centralAir, data=saratoga_train)
     AIC(lm_medium) # 2844.872
 
-    ## [1] 2909.667
+    ## [1] 2888.313
 
     lm_step = step(lm_medium, 
                    scope=~(.)^2)
@@ -84,63 +84,63 @@
     ## 
     ## Residuals:
     ##     Min      1Q  Median      3Q     Max 
-    ## -2.4453 -0.3800 -0.0756  0.2756  5.1216 
+    ## -2.4995 -0.3919 -0.0642  0.2859  5.1099 
     ## 
     ## Coefficients:
-    ##                               Estimate Std. Error t value Pr(>|t|)    
-    ## (Intercept)                   0.057426   0.043934   1.307 0.191404    
-    ## lotSize                       0.048314   0.018406   2.625 0.008765 ** 
-    ## age                          -0.147543   0.071499  -2.064 0.039250 *  
-    ## livingArea                    0.731325   0.054162  13.503  < 2e-16 ***
-    ## pctCollege                    0.074821   0.025481   2.936 0.003377 ** 
-    ## bedrooms                     -0.162093   0.042538  -3.811 0.000145 ***
-    ## fireplaces                    0.001126   0.021363   0.053 0.957968    
-    ## bathrooms                     0.165203   0.033880   4.876 1.21e-06 ***
-    ## rooms                         0.071498   0.035536   2.012 0.044418 *  
-    ## heatinghot water/steam       -0.065466   0.057163  -1.145 0.252307    
-    ## heatingelectric              -0.426622   0.328264  -1.300 0.193951    
-    ## fuelelectric                  0.133569   0.330503   0.404 0.686174    
-    ## fueloil                       0.198092   0.126114   1.571 0.116477    
-    ## centralAirNo                 -0.090807   0.055244  -1.644 0.100460    
-    ## livingArea:centralAirNo      -0.266393   0.056491  -4.716 2.66e-06 ***
-    ## age:pctCollege                0.070037   0.019929   3.514 0.000456 ***
-    ## age:heatinghot water/steam    0.123734   0.042707   2.897 0.003825 ** 
-    ## age:heatingelectric          -0.346185   0.719737  -0.481 0.630603    
-    ## pctCollege:fireplaces        -0.077132   0.019350  -3.986 7.07e-05 ***
-    ## livingArea:fireplaces         0.040339   0.014171   2.847 0.004486 ** 
-    ## livingArea:fuelelectric       0.070895   0.091290   0.777 0.437535    
-    ## livingArea:fueloil           -0.299414   0.091329  -3.278 0.001071 ** 
-    ## bedrooms:bathrooms           -0.029312   0.019525  -1.501 0.133527    
-    ## pctCollege:fuelelectric      -0.128137   0.051152  -2.505 0.012361 *  
-    ## pctCollege:fueloil           -0.063339   0.047124  -1.344 0.179145    
-    ## bathrooms:fuelelectric       -0.160410   0.077797  -2.062 0.039410 *  
-    ## bathrooms:fueloil             0.021566   0.081507   0.265 0.791368    
-    ## age:centralAirNo              0.174264   0.077379   2.252 0.024478 *  
-    ## rooms:heatinghot water/steam -0.132982   0.052535  -2.531 0.011476 *  
-    ## rooms:heatingelectric        -0.465612   0.164715  -2.827 0.004772 ** 
-    ## rooms:fuelelectric            0.391972   0.166585   2.353 0.018767 *  
-    ## rooms:fueloil                 0.080384   0.079840   1.007 0.314209    
-    ## age:fuelelectric              0.412429   0.720863   0.572 0.567327    
-    ## age:fueloil                  -0.092192   0.050151  -1.838 0.066241 .  
-    ## bedrooms:centralAirNo         0.090655   0.054310   1.669 0.095307 .  
-    ## lotSize:fireplaces           -0.029896   0.014972  -1.997 0.046049 *  
-    ## age:bathrooms                -0.008662   0.020084  -0.431 0.666322    
-    ## fuelelectric:centralAirNo     0.077880   0.125303   0.622 0.534353    
-    ## fueloil:centralAirNo         -0.296381   0.149408  -1.984 0.047493 *  
+    ##                                Estimate Std. Error t value Pr(>|t|)    
+    ## (Intercept)                   8.175e-02  4.327e-02   1.889 0.059095 .  
+    ## lotSize                       6.179e-02  1.883e-02   3.281 0.001062 ** 
+    ## age                          -9.312e-02  6.863e-02  -1.357 0.175037    
+    ## livingArea                    7.175e-01  5.420e-02  13.238  < 2e-16 ***
+    ## pctCollege                    5.992e-02  2.504e-02   2.393 0.016845 *  
+    ## bedrooms                     -1.478e-01  4.344e-02  -3.401 0.000690 ***
+    ## fireplaces                    5.847e-03  2.092e-02   0.280 0.779896    
+    ## bathrooms                     1.824e-01  3.367e-02   5.416 7.20e-08 ***
+    ## rooms                         9.192e-02  3.454e-02   2.661 0.007874 ** 
+    ## heatinghot water/steam       -1.125e-01  5.874e-02  -1.915 0.055646 .  
+    ## heatingelectric              -1.939e-01  1.893e-01  -1.024 0.305906    
+    ## fuelelectric                  1.645e-03  1.955e-01   0.008 0.993289    
+    ## fueloil                       9.981e-02  1.341e-01   0.744 0.456796    
+    ## centralAirNo                 -8.931e-02  5.435e-02  -1.643 0.100555    
+    ## livingArea:centralAirNo      -2.427e-01  5.806e-02  -4.180 3.10e-05 ***
+    ## age:pctCollege                6.517e-02  1.875e-02   3.476 0.000526 ***
+    ## age:heatinghot water/steam    1.192e-01  4.225e-02   2.822 0.004842 ** 
+    ## age:heatingelectric           2.048e-01  2.725e-01   0.752 0.452387    
+    ## pctCollege:fireplaces        -7.766e-02  1.892e-02  -4.105 4.28e-05 ***
+    ## livingArea:fireplaces         3.943e-02  1.445e-02   2.729 0.006427 ** 
+    ## livingArea:fuelelectric       9.097e-02  8.995e-02   1.011 0.312047    
+    ## livingArea:fueloil           -3.232e-01  9.483e-02  -3.408 0.000673 ***
+    ## bedrooms:bathrooms           -3.820e-02  1.997e-02  -1.913 0.055924 .  
+    ## pctCollege:fuelelectric      -1.388e-01  5.104e-02  -2.720 0.006615 ** 
+    ## pctCollege:fueloil           -4.947e-02  4.776e-02  -1.036 0.300482    
+    ## bathrooms:fuelelectric       -1.408e-01  7.596e-02  -1.854 0.063995 .  
+    ## bathrooms:fueloil            -4.884e-03  7.877e-02  -0.062 0.950565    
+    ## age:centralAirNo              1.430e-01  7.348e-02   1.946 0.051858 .  
+    ## rooms:heatinghot water/steam -1.347e-01  5.298e-02  -2.542 0.011142 *  
+    ## rooms:heatingelectric        -4.448e-01  1.687e-01  -2.637 0.008452 ** 
+    ## rooms:fuelelectric            3.858e-01  1.694e-01   2.278 0.022892 *  
+    ## rooms:fueloil                 1.086e-01  8.174e-02   1.328 0.184298    
+    ## age:fuelelectric             -9.151e-02  2.913e-01  -0.314 0.753487    
+    ## age:fueloil                  -1.171e-01  4.671e-02  -2.507 0.012295 *  
+    ## bedrooms:centralAirNo         4.773e-02  5.482e-02   0.871 0.384170    
+    ## lotSize:fireplaces           -3.100e-02  1.534e-02  -2.020 0.043580 *  
+    ## age:bathrooms                 5.909e-03  1.947e-02   0.304 0.761528    
+    ## fuelelectric:centralAirNo    -2.448e-05  1.264e-01   0.000 0.999845    
+    ## fueloil:centralAirNo         -1.889e-01  1.553e-01  -1.216 0.224154    
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Residual standard error: 0.652 on 1344 degrees of freedom
-    ## Multiple R-squared:  0.5979, Adjusted R-squared:  0.5865 
-    ## F-statistic: 52.59 on 38 and 1344 DF,  p-value: < 2.2e-16
+    ## Residual standard error: 0.6509 on 1344 degrees of freedom
+    ## Multiple R-squared:  0.5874, Adjusted R-squared:  0.5758 
+    ## F-statistic: 50.36 on 38 and 1344 DF,  p-value: < 2.2e-16
 
     AIC(lm_best1)
 
-    ## [1] 2782.29
+    ## [1] 2777.531
 
     rmse(lm_best1,saratoga_test) 
 
-    ## [1] 0.6016652
+    ## [1] 0.5980871
 
 ##### Task 2: KNN
 
@@ -162,7 +162,7 @@
                      fireplaces + bathrooms + rooms + heating + fuel + centralAir, data=saratoga_train, k = best_k)
     rmse(knn_best, saratoga_test)  
 
-    ## [1] 0.6151218
+    ## [1] 0.6103434
 
 ###### To ensure the accuracy of the comparison and the models, we scaled all of the numeric variables at first. Then, we use a stepwise method and get the best linear model with a higher AIC than medium model. Then we apply the KNN method, choose the best k, and get our best KNN model. Afterthat, we compare the two model’s out-of-sample prediction performance by calculating the RMSE of different models. Since the KNN model has a RMSE of 0.6734326, and the best linear model has RMSE of 0.6418865, therefore, we maintain that the linear model has better performance.
 
@@ -246,28 +246,28 @@
     ## 
     ## Residuals:
     ##      Min       1Q   Median       3Q      Max 
-    ## -0.18792 -0.11318 -0.09429 -0.02434  1.03149 
+    ## -0.17955 -0.11246 -0.09211 -0.02668  1.02990 
     ## 
     ## Coefficients:
     ##                               Estimate Std. Error t value Pr(>|t|)    
-    ## (Intercept)                  -0.020625   0.030975  -0.666 0.505513    
-    ## market_segmentComplementary   0.095791   0.033624   2.849 0.004390 ** 
-    ## market_segmentCorporate       0.015253   0.030362   0.502 0.615407    
-    ## market_segmentDirect          0.117143   0.030121   3.889 0.000101 ***
-    ## market_segmentGroups          0.006772   0.030444   0.222 0.823968    
-    ## market_segmentOffline_TA/TO   0.019550   0.030109   0.649 0.516135    
-    ## market_segmentOnline_TA       0.080195   0.030001   2.673 0.007519 ** 
-    ## adults                        0.018896   0.003013   6.270 3.64e-10 ***
-    ## customer_typeGroup           -0.018009   0.017820  -1.011 0.312196    
-    ## customer_typeTransient        0.015821   0.007742   2.043 0.041024 *  
-    ## customer_typeTransient-Party -0.012373   0.008234  -1.503 0.132930    
-    ## is_repeated_guest            -0.043060   0.007686  -5.603 2.13e-08 ***
+    ## (Intercept)                  -0.019472   0.028874  -0.674   0.5001    
+    ## market_segmentComplementary   0.077087   0.031441   2.452   0.0142 *  
+    ## market_segmentCorporate       0.013372   0.028206   0.474   0.6354    
+    ## market_segmentDirect          0.114587   0.027959   4.098 4.17e-05 ***
+    ## market_segmentGroups          0.008413   0.028288   0.297   0.7662    
+    ## market_segmentOffline_TA/TO   0.023524   0.027943   0.842   0.3999    
+    ## market_segmentOnline_TA       0.080791   0.027829   2.903   0.0037 ** 
+    ## adults                        0.016647   0.002997   5.554 2.81e-08 ***
+    ## customer_typeGroup           -0.014433   0.018585  -0.777   0.4374    
+    ## customer_typeTransient        0.017844   0.007713   2.313   0.0207 *  
+    ## customer_typeTransient-Party -0.010671   0.008197  -1.302   0.1930    
+    ## is_repeated_guest            -0.041463   0.007548  -5.494 3.97e-08 ***
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Residual standard error: 0.2693 on 35989 degrees of freedom
-    ## Multiple R-squared:  0.0324, Adjusted R-squared:  0.0321 
-    ## F-statistic: 109.5 on 11 and 35989 DF,  p-value: < 2.2e-16
+    ## Residual standard error: 0.2685 on 35989 degrees of freedom
+    ## Multiple R-squared:  0.03066,    Adjusted R-squared:  0.03036 
+    ## F-statistic: 103.5 on 11 and 35989 DF,  p-value: < 2.2e-16
 
 ###### Big linear Model
 
@@ -280,85 +280,85 @@
     ## 
     ## Residuals:
     ##      Min       1Q   Median       3Q      Max 
-    ## -0.93094 -0.08664 -0.03775  0.01221  1.08499 
+    ## -0.93024 -0.08663 -0.03765  0.01296  1.08011 
     ## 
     ## Coefficients:
     ##                                      Estimate Std. Error t value Pr(>|t|)    
-    ## (Intercept)                        -3.883e+00  2.306e+00  -1.684 0.092268 .  
-    ## hotelResort_Hotel                  -3.530e-02  3.242e-03 -10.888  < 2e-16 ***
-    ## lead_time                           7.315e-05  1.776e-05   4.120 3.80e-05 ***
-    ## stays_in_weekend_nights            -3.250e-03  2.151e-03  -1.511 0.130907    
-    ## stays_in_week_nights                1.680e-03  1.001e-03   1.678 0.093368 .  
-    ## adults                             -4.180e-02  2.845e-03 -14.695  < 2e-16 ***
-    ## mealFB                              1.767e-02  1.919e-02   0.920 0.357351    
-    ## mealHB                             -8.881e-03  4.164e-03  -2.133 0.032955 *  
-    ## mealSC                             -5.009e-02  4.765e-03 -10.513  < 2e-16 ***
-    ## mealUndefined                       8.431e-03  1.241e-02   0.679 0.496983    
-    ## market_segmentComplementary         5.653e-02  3.103e-02   1.822 0.068485 .  
-    ## market_segmentCorporate             3.912e-02  2.644e-02   1.480 0.139005    
-    ## market_segmentDirect                4.458e-02  2.837e-02   1.571 0.116169    
-    ## market_segmentGroups                5.918e-02  2.764e-02   2.141 0.032289 *  
-    ## market_segmentOffline_TA/TO         6.800e-02  2.770e-02   2.455 0.014105 *  
-    ## market_segmentOnline_TA             5.983e-02  2.765e-02   2.164 0.030461 *  
-    ## distribution_channelDirect          1.346e-02  1.155e-02   1.165 0.243884    
-    ## distribution_channelGDS            -7.457e-02  2.782e-02  -2.681 0.007343 ** 
-    ## distribution_channelTA/TO          -4.578e-03  9.737e-03  -0.470 0.638257    
-    ## is_repeated_guest                  -2.491e-02  7.251e-03  -3.435 0.000593 ***
-    ## previous_cancellations             -1.069e-04  4.898e-03  -0.022 0.982579    
-    ## previous_bookings_not_canceled     -2.572e-03  9.070e-04  -2.836 0.004571 ** 
-    ## reserved_room_typeB                 1.777e-01  1.505e-02  11.806  < 2e-16 ***
-    ## reserved_room_typeC                 5.337e-01  1.616e-02  33.033  < 2e-16 ***
-    ## reserved_room_typeD                -6.473e-02  4.835e-03 -13.386  < 2e-16 ***
-    ## reserved_room_typeE                -3.121e-02  8.673e-03  -3.599 0.000320 ***
-    ## reserved_room_typeF                 2.890e-01  1.294e-02  22.337  < 2e-16 ***
-    ## reserved_room_typeG                 4.257e-01  1.741e-02  24.456  < 2e-16 ***
-    ## reserved_room_typeH                 5.781e-01  3.330e-02  17.359  < 2e-16 ***
-    ## reserved_room_typeL                -1.121e-01  1.648e-01  -0.680 0.496338    
-    ## assigned_room_typeB                 2.220e-02  1.035e-02   2.145 0.031962 *  
-    ## assigned_room_typeC                 9.186e-02  9.432e-03   9.739  < 2e-16 ***
-    ## assigned_room_typeD                 5.949e-02  4.210e-03  14.132  < 2e-16 ***
-    ## assigned_room_typeE                 5.509e-02  7.756e-03   7.103 1.24e-12 ***
-    ## assigned_room_typeF                 7.631e-02  1.111e-02   6.866 6.73e-12 ***
-    ## assigned_room_typeG                 1.092e-01  1.522e-02   7.177 7.28e-13 ***
-    ## assigned_room_typeH                 1.018e-01  2.859e-02   3.561 0.000370 ***
-    ## assigned_room_typeI                 8.460e-02  1.928e-02   4.389 1.14e-05 ***
-    ## assigned_room_typeK                 2.439e-02  1.991e-02   1.225 0.220500    
-    ## booking_changes                     2.038e-02  1.708e-03  11.932  < 2e-16 ***
-    ## deposit_typeNon_Refund              2.722e-02  3.507e-02   0.776 0.437636    
-    ## deposit_typeRefundable              1.709e-02  2.811e-02   0.608 0.543079    
-    ## days_in_waiting_list               -9.949e-06  8.688e-05  -0.115 0.908826    
-    ## customer_typeGroup                 -1.121e-02  1.555e-02  -0.721 0.471188    
-    ## customer_typeTransient              1.636e-03  7.002e-03   0.234 0.815300    
-    ## customer_typeTransient-Party       -4.003e-02  7.504e-03  -5.335 9.64e-08 ***
-    ## average_daily_rate                  9.432e-04  3.994e-05  23.615  < 2e-16 ***
-    ## required_car_parking_spacesparking  1.622e-03  4.331e-03   0.375 0.707989    
-    ## total_of_special_requests           3.255e-02  1.677e-03  19.408  < 2e-16 ***
-    ## date                                2.352e-04  1.402e-04   1.678 0.093384 .  
-    ## year2016                           -8.309e-02  5.144e-02  -1.615 0.106260    
-    ## year2017                           -1.850e-01  1.025e-01  -1.804 0.071172 .  
-    ## wday2                              -8.939e-03  5.051e-03  -1.770 0.076783 .  
-    ## wday3                              -1.698e-02  6.513e-03  -2.607 0.009129 ** 
-    ## wday4                              -1.728e-02  6.329e-03  -2.730 0.006342 ** 
-    ## wday5                              -1.747e-02  5.910e-03  -2.955 0.003127 ** 
-    ## wday6                              -1.846e-02  5.409e-03  -3.414 0.000641 ***
-    ## wday7                               3.485e-03  4.913e-03   0.709 0.478212    
-    ## month2                              1.596e-02  8.168e-03   1.954 0.050735 .  
-    ## month3                             -1.920e-02  1.069e-02  -1.795 0.072658 .  
-    ## month4                             -2.722e-02  1.433e-02  -1.900 0.057444 .  
-    ## month5                             -6.544e-02  1.813e-02  -3.609 0.000307 ***
-    ## month6                             -6.895e-02  2.223e-02  -3.102 0.001921 ** 
-    ## month7                             -2.916e-02  2.629e-02  -1.109 0.267396    
-    ## month8                             -4.184e-02  3.049e-02  -1.372 0.170038    
-    ## month9                             -1.079e-01  3.478e-02  -3.102 0.001923 ** 
-    ## month10                            -9.097e-02  3.888e-02  -2.340 0.019306 *  
-    ## month11                            -9.899e-02  4.318e-02  -2.293 0.021877 *  
-    ## month12                            -7.348e-02  4.754e-02  -1.546 0.122166    
+    ## (Intercept)                        -5.582e+00  2.303e+00  -2.424 0.015351 *  
+    ## hotelResort_Hotel                  -3.493e-02  3.245e-03 -10.766  < 2e-16 ***
+    ## lead_time                           7.951e-05  1.770e-05   4.491 7.10e-06 ***
+    ## stays_in_weekend_nights            -4.495e-04  2.144e-03  -0.210 0.833957    
+    ## stays_in_week_nights                3.774e-04  9.992e-04   0.378 0.705672    
+    ## adults                             -4.417e-02  2.838e-03 -15.566  < 2e-16 ***
+    ## mealFB                              1.254e-02  1.917e-02   0.654 0.513055    
+    ## mealHB                             -4.428e-03  4.150e-03  -1.067 0.286017    
+    ## mealSC                             -5.403e-02  4.771e-03 -11.324  < 2e-16 ***
+    ## mealUndefined                       1.422e-03  1.209e-02   0.118 0.906411    
+    ## market_segmentComplementary         5.504e-02  2.929e-02   1.879 0.060199 .  
+    ## market_segmentCorporate             3.848e-02  2.464e-02   1.562 0.118413    
+    ## market_segmentDirect                4.550e-02  2.671e-02   1.703 0.088502 .  
+    ## market_segmentGroups                6.426e-02  2.590e-02   2.481 0.013092 *  
+    ## market_segmentOffline_TA/TO         7.458e-02  2.597e-02   2.872 0.004077 ** 
+    ## market_segmentOnline_TA             6.408e-02  2.591e-02   2.473 0.013410 *  
+    ## distribution_channelDirect          1.015e-02  1.155e-02   0.879 0.379427    
+    ## distribution_channelGDS            -7.252e-02  2.819e-02  -2.572 0.010107 *  
+    ## distribution_channelTA/TO          -8.383e-03  9.621e-03  -0.871 0.383562    
+    ## is_repeated_guest                  -2.715e-02  7.163e-03  -3.791 0.000150 ***
+    ## previous_cancellations             -9.504e-04  4.601e-03  -0.207 0.836356    
+    ## previous_bookings_not_canceled     -2.283e-03  8.723e-04  -2.618 0.008857 ** 
+    ## reserved_room_typeB                 1.946e-01  1.490e-02  13.061  < 2e-16 ***
+    ## reserved_room_typeC                 5.138e-01  1.603e-02  32.059  < 2e-16 ***
+    ## reserved_room_typeD                -6.847e-02  4.818e-03 -14.210  < 2e-16 ***
+    ## reserved_room_typeE                -3.355e-02  8.658e-03  -3.876 0.000107 ***
+    ## reserved_room_typeF                 2.927e-01  1.287e-02  22.753  < 2e-16 ***
+    ## reserved_room_typeG                 4.244e-01  1.732e-02  24.503  < 2e-16 ***
+    ## reserved_room_typeH                 5.502e-01  3.401e-02  16.177  < 2e-16 ***
+    ## reserved_room_typeL                -9.847e-02  1.645e-01  -0.599 0.549442    
+    ## assigned_room_typeB                 1.892e-02  9.972e-03   1.897 0.057850 .  
+    ## assigned_room_typeC                 9.796e-02  9.309e-03  10.523  < 2e-16 ***
+    ## assigned_room_typeD                 6.150e-02  4.186e-03  14.690  < 2e-16 ***
+    ## assigned_room_typeE                 5.692e-02  7.748e-03   7.347 2.08e-13 ***
+    ## assigned_room_typeF                 6.484e-02  1.103e-02   5.877 4.22e-09 ***
+    ## assigned_room_typeG                 1.014e-01  1.510e-02   6.717 1.89e-11 ***
+    ## assigned_room_typeH                 1.120e-01  2.984e-02   3.755 0.000174 ***
+    ## assigned_room_typeI                 1.013e-01  1.806e-02   5.609 2.05e-08 ***
+    ## assigned_room_typeK                 3.724e-02  2.080e-02   1.790 0.073442 .  
+    ## booking_changes                     2.080e-02  1.707e-03  12.184  < 2e-16 ***
+    ## deposit_typeNon_Refund              3.010e-02  3.360e-02   0.896 0.370295    
+    ## deposit_typeRefundable              1.017e-02  2.877e-02   0.353 0.723747    
+    ## days_in_waiting_list                2.319e-06  8.887e-05   0.026 0.979186    
+    ## customer_typeGroup                 -6.346e-03  1.621e-02  -0.391 0.695525    
+    ## customer_typeTransient              1.802e-03  6.983e-03   0.258 0.796396    
+    ## customer_typeTransient-Party       -4.196e-02  7.477e-03  -5.612 2.02e-08 ***
+    ## average_daily_rate                  9.415e-04  4.002e-05  23.524  < 2e-16 ***
+    ## required_car_parking_spacesparking -3.336e-03  4.358e-03  -0.766 0.443970    
+    ## total_of_special_requests           3.469e-02  1.679e-03  20.663  < 2e-16 ***
+    ## date                                3.385e-04  1.400e-04   2.418 0.015590 *  
+    ## year2016                           -1.168e-01  5.133e-02  -2.275 0.022931 *  
+    ## year2017                           -2.567e-01  1.023e-01  -2.509 0.012117 *  
+    ## wday2                              -8.640e-03  5.054e-03  -1.709 0.087369 .  
+    ## wday3                              -1.113e-02  6.502e-03  -1.712 0.086828 .  
+    ## wday4                              -1.372e-02  6.311e-03  -2.173 0.029764 *  
+    ## wday5                              -1.163e-02  5.876e-03  -1.978 0.047883 *  
+    ## wday6                              -1.520e-02  5.399e-03  -2.816 0.004871 ** 
+    ## wday7                               3.100e-03  4.906e-03   0.632 0.527461    
+    ## month2                              9.364e-03  8.153e-03   1.149 0.250768    
+    ## month3                             -2.470e-02  1.068e-02  -2.313 0.020733 *  
+    ## month4                             -3.713e-02  1.430e-02  -2.596 0.009438 ** 
+    ## month5                             -8.328e-02  1.811e-02  -4.599 4.26e-06 ***
+    ## month6                             -8.875e-02  2.218e-02  -4.001 6.33e-05 ***
+    ## month7                             -5.352e-02  2.627e-02  -2.037 0.041611 *  
+    ## month8                             -6.736e-02  3.047e-02  -2.211 0.027066 *  
+    ## month9                             -1.307e-01  3.472e-02  -3.766 0.000166 ***
+    ## month10                            -1.231e-01  3.883e-02  -3.171 0.001523 ** 
+    ## month11                            -1.330e-01  4.310e-02  -3.086 0.002031 ** 
+    ## month12                            -1.078e-01  4.741e-02  -2.273 0.023017 *  
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Residual standard error: 0.2328 on 35932 degrees of freedom
-    ## Multiple R-squared:  0.2784, Adjusted R-squared:  0.277 
-    ## F-statistic: 203.9 on 68 and 35932 DF,  p-value: < 2.2e-16
+    ## Residual standard error: 0.2323 on 35932 degrees of freedom
+    ## Multiple R-squared:  0.2752, Adjusted R-squared:  0.2739 
+    ## F-statistic: 200.7 on 68 and 35932 DF,  p-value: < 2.2e-16
 
 ###### Stepwise Selection
 
@@ -769,14 +769,14 @@
 
     rmse(lm_small, hd_test)
 
-    ## [1] 0.264067
+    ## [1] 0.267461
 
     rmse(lm_best2, hd_test)
 
     ## Warning in predict.lm(model, data): prediction from a rank-deficient fit may be
     ## misleading
 
-    ## [1] 0.2235335
+    ## [1] 0.2265919
 
 ##### Task 2: Model validation - step 1 (ROC)
 
@@ -808,38 +808,190 @@
 
 ##### Task 3: Model validation - step 2 (K folds)
 
+    K_folds = 20
+    # create specific fold IDs for each row
+    # the default behavior of sample actually gives a permutation
+    hv = hv %>%
+      mutate(fold_id = rep(1:K_folds, length=nrow(hv)) %>% sample)
+    #head(hv)
+    # now loop over folds
+
+    rmse <- foreach(fold = 1:K_folds, .combine='rbind') %do% {
+      lm_best = lm(children ~ market_segment + adults + customer_type + is_repeated_guest +
+           reserved_room_type + total_of_special_requests + month +
+           assigned_room_type + market_segment:reserved_room_type +
+           adults:reserved_room_type + reserved_room_type:month, data=filter(hv, fold_id != fold))
+      rmse =rmse(lm_best, data=filter(hv, fold_id == fold))
+    } 
+
+    ## Warning in predict.lm(model, data): prediction from a rank-deficient fit may be
+    ## misleading
+
+    ## Warning in predict.lm(model, data): prediction from a rank-deficient fit may be
+    ## misleading
+
+    ## Warning in predict.lm(model, data): prediction from a rank-deficient fit may be
+    ## misleading
+
+    ## Warning in predict.lm(model, data): prediction from a rank-deficient fit may be
+    ## misleading
+
+    ## Warning in predict.lm(model, data): prediction from a rank-deficient fit may be
+    ## misleading
+
+    ## Warning in predict.lm(model, data): prediction from a rank-deficient fit may be
+    ## misleading
+
+    ## Warning in predict.lm(model, data): prediction from a rank-deficient fit may be
+    ## misleading
+
+    ## Warning in predict.lm(model, data): prediction from a rank-deficient fit may be
+    ## misleading
+
+    ## Warning in predict.lm(model, data): prediction from a rank-deficient fit may be
+    ## misleading
+
+    ## Warning in predict.lm(model, data): prediction from a rank-deficient fit may be
+    ## misleading
+
+    ## Warning in predict.lm(model, data): prediction from a rank-deficient fit may be
+    ## misleading
+
+    ## Warning in predict.lm(model, data): prediction from a rank-deficient fit may be
+    ## misleading
+
+    ## Warning in predict.lm(model, data): prediction from a rank-deficient fit may be
+    ## misleading
+
+    ## Warning in predict.lm(model, data): prediction from a rank-deficient fit may be
+    ## misleading
+
+    ## Warning in predict.lm(model, data): prediction from a rank-deficient fit may be
+    ## misleading
+
+    ## Warning in predict.lm(model, data): prediction from a rank-deficient fit may be
+    ## misleading
+
+    ## Warning in predict.lm(model, data): prediction from a rank-deficient fit may be
+    ## misleading
+
+    ## Warning in predict.lm(model, data): prediction from a rank-deficient fit may be
+    ## misleading
+
+    ## Warning in predict.lm(model, data): prediction from a rank-deficient fit may be
+    ## misleading
+
+    ## Warning in predict.lm(model, data): prediction from a rank-deficient fit may be
+    ## misleading
+
+    pred <- foreach(fold = 1:K_folds, .combine='rbind') %do% {
+      lm_best = lm(children ~ market_segment + adults + customer_type + is_repeated_guest +
+           reserved_room_type + total_of_special_requests + month +
+           assigned_room_type + market_segment:reserved_room_type +
+           adults:reserved_room_type + reserved_room_type:month, data=filter(hv, fold_id != fold))
+      pred = sum(predict(lm_best, filter(hv, fold_id == fold)))
+    } 
+
+    ## Warning in predict.lm(lm_best, filter(hv, fold_id == fold)): prediction from a
+    ## rank-deficient fit may be misleading
+
+    ## Warning in predict.lm(lm_best, filter(hv, fold_id == fold)): prediction from a
+    ## rank-deficient fit may be misleading
+
+    ## Warning in predict.lm(lm_best, filter(hv, fold_id == fold)): prediction from a
+    ## rank-deficient fit may be misleading
+
+    ## Warning in predict.lm(lm_best, filter(hv, fold_id == fold)): prediction from a
+    ## rank-deficient fit may be misleading
+
+    ## Warning in predict.lm(lm_best, filter(hv, fold_id == fold)): prediction from a
+    ## rank-deficient fit may be misleading
+
+    ## Warning in predict.lm(lm_best, filter(hv, fold_id == fold)): prediction from a
+    ## rank-deficient fit may be misleading
+
+    ## Warning in predict.lm(lm_best, filter(hv, fold_id == fold)): prediction from a
+    ## rank-deficient fit may be misleading
+
+    ## Warning in predict.lm(lm_best, filter(hv, fold_id == fold)): prediction from a
+    ## rank-deficient fit may be misleading
+
+    ## Warning in predict.lm(lm_best, filter(hv, fold_id == fold)): prediction from a
+    ## rank-deficient fit may be misleading
+
+    ## Warning in predict.lm(lm_best, filter(hv, fold_id == fold)): prediction from a
+    ## rank-deficient fit may be misleading
+
+    ## Warning in predict.lm(lm_best, filter(hv, fold_id == fold)): prediction from a
+    ## rank-deficient fit may be misleading
+
+    ## Warning in predict.lm(lm_best, filter(hv, fold_id == fold)): prediction from a
+    ## rank-deficient fit may be misleading
+
+    ## Warning in predict.lm(lm_best, filter(hv, fold_id == fold)): prediction from a
+    ## rank-deficient fit may be misleading
+
+    ## Warning in predict.lm(lm_best, filter(hv, fold_id == fold)): prediction from a
+    ## rank-deficient fit may be misleading
+
+    ## Warning in predict.lm(lm_best, filter(hv, fold_id == fold)): prediction from a
+    ## rank-deficient fit may be misleading
+
+    ## Warning in predict.lm(lm_best, filter(hv, fold_id == fold)): prediction from a
+    ## rank-deficient fit may be misleading
+
+    ## Warning in predict.lm(lm_best, filter(hv, fold_id == fold)): prediction from a
+    ## rank-deficient fit may be misleading
+
+    ## Warning in predict.lm(lm_best, filter(hv, fold_id == fold)): prediction from a
+    ## rank-deficient fit may be misleading
+
+    ## Warning in predict.lm(lm_best, filter(hv, fold_id == fold)): prediction from a
+    ## rank-deficient fit may be misleading
+
+    ## Warning in predict.lm(lm_best, filter(hv, fold_id == fold)): prediction from a
+    ## rank-deficient fit may be misleading
+
+     true_n <- foreach(fold = 1:K_folds, .combine='rbind') %do% {
+      lm_best = lm(children ~ market_segment + adults + customer_type + is_repeated_guest +
+           reserved_room_type + total_of_special_requests + month +
+           assigned_room_type + market_segment:reserved_room_type +
+           adults:reserved_room_type + reserved_room_type:month, data=filter(hv, fold_id != fold))
+      true_n = sum(as.numeric(filter(hv, fold_id == fold)$children))
+    } 
+
     table <- cbind(pred,true_n,pred/250)
     colnames(table) <- c("predicted_n","true_prob","predict_probability")
     print(table)
 
     ##           predicted_n true_prob predict_probability
-    ## result.1     23.00133        19          0.09200530
-    ## result.2     15.56918        19          0.06227673
-    ## result.3     23.15637        18          0.09262548
-    ## result.4     24.03546        23          0.09614184
-    ## result.5     17.38390        21          0.06953561
-    ## result.6     18.23657        19          0.07294628
-    ## result.7     16.97051        16          0.06788203
-    ## result.8     18.97921        19          0.07591682
-    ## result.9     25.81153        23          0.10324612
-    ## result.10    24.46276        20          0.09785105
-    ## result.11    20.30527        23          0.08122109
-    ## result.12    19.84722        18          0.07938889
-    ## result.13    20.40745        21          0.08162979
-    ## result.14    21.28232        19          0.08512926
-    ## result.15    16.56492        19          0.06625969
-    ## result.16    25.47909        25          0.10191637
-    ## result.17    20.93967        21          0.08375869
-    ## result.18    18.17550        20          0.07270199
-    ## result.19    16.99804        16          0.06799216
-    ## result.20    19.00305        23          0.07601219
+    ## result.1     18.76814        26          0.07507257
+    ## result.2     26.07228        30          0.10428912
+    ## result.3     21.74332        25          0.08697330
+    ## result.4     15.59719        17          0.06238878
+    ## result.5     18.74155        18          0.07496620
+    ## result.6     21.23768        18          0.08495071
+    ## result.7     20.15443        23          0.08061770
+    ## result.8     20.32538        17          0.08130153
+    ## result.9     20.21202        23          0.08084809
+    ## result.10    15.33531        17          0.06134125
+    ## result.11    22.84628        17          0.09138513
+    ## result.12    18.14557        11          0.07258228
+    ## result.13    21.83195        24          0.08732780
+    ## result.14    24.42112        15          0.09768446
+    ## result.15    20.70865        21          0.08283458
+    ## result.16    22.60913        26          0.09043653
+    ## result.17    18.62452        21          0.07449810
+    ## result.18    16.20437        14          0.06481749
+    ## result.19    20.13553        18          0.08054212
+    ## result.20    22.67082        21          0.09068327
 
     mean(rmse)  
 
-    ## [1] 0.2386704
+    ## [1] 0.2386357
 
     sd(rmse)/sqrt(K_folds)
 
-    ## [1] 0.0040378
+    ## [1] 0.004633148
 
 ###### From the result table of the 20 folds, we can see the prediction is quite good. Only in the first fold, the difference is larger. Overall, it is quite good. We can also see the mean of rmse in all folds is 0.2382634.
