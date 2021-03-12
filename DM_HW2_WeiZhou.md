@@ -14,7 +14,7 @@
       geom_line(aes(x=hour_of_day,y=hourmean,color=month)) +
       facet_wrap(~day_of_week)
 
-![](DM_HW2_WeiZhou_files/figure-markdown_strict/unnamed-chunk-1-1.png)
+![](./figure-markdown_strict/unnamed-chunk-1-1.png)
 
 ###### From the graph, we can see that the peaks are not always the same from day to day. From Monday to Friday, there is a clear peak, but in Saturday and Sunday, there is no obvious peak. This result makes sense, since people go by bus to campus on weekdays more than weekend.
 
@@ -26,7 +26,7 @@
       geom_point(aes(x=temperature,y=boarding,color=weekend)) +
       facet_wrap(~hour_of_day)
 
-![](DM_HW2_WeiZhou_files/figure-markdown_strict/unnamed-chunk-2-1.png)
+![](./figure-markdown_strict/unnamed-chunk-2-1.png)
 
 ###### From the scatter plot, we can see when temperature is higher there are relatively more data points than lower teperature. This would be helpful for the bus company to make better strategy.
 
@@ -177,7 +177,7 @@
     ggplot(data=d) +
       geom_col(mapping = aes(x=history,y=pct))
 
-![](DM_HW2_WeiZhou_files/figure-markdown_strict/unnamed-chunk-10-1.png)
+![](./figure-markdown_strict/unnamed-chunk-10-1.png)
 
 ###### From this graph, we can see that the probability of Default is higher when the credit history is better. This result looks not reasonable. It means this sample might not be a good sample. Therefore, it is not good for predicting. It’s highly possible that it cannot represent the whole population.
 
@@ -804,7 +804,7 @@
       labs(title="ROC curves: linear model") +
       theme_bw(base_size = 10)
 
-![](DM_HW2_WeiZhou_files/figure-markdown_strict/unnamed-chunk-19-1.png)
+![](./figure-markdown_strict/unnamed-chunk-19-1.png)
 
 ##### Task 3: Model validation - step 2 (K folds)
 
