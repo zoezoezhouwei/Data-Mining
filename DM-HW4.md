@@ -5,13 +5,13 @@
     ggplot(wine) + 
       geom_point(aes(x=volatile.acidity, y=fixed.acidity, color=color))
 
-![](./figure-markdown_strict/unnamed-chunk-1-1.png)
+![](./figure-markdown_hw4/unnamed-chunk-1-1.png)
 
     wine$quality <- factor(wine$quality)
     ggplot(wine) + 
       geom_point(aes(x=volatile.acidity, y=fixed.acidity, color=quality))
 
-![](./figure-markdown_strict/unnamed-chunk-2-1.png)
+![](./figure-markdown_hw4/unnamed-chunk-2-1.png)
 
     #summary(wine)
     unique(wine$color)
@@ -34,27 +34,27 @@
     # A few plots with cluster membership shown
     qplot(fixed.acidity, volatile.acidity, data=wine, color=factor(clust2$cluster))
 
-![](./figure-markdown_strict/unnamed-chunk-4-1.png)
+![](./figure-markdown_hw4/unnamed-chunk-4-1.png)
 
     qplot(citric.acid, residual.sugar, data=wine, color=factor(clust2$cluster))
 
-![](./figure-markdown_strict/unnamed-chunk-4-2.png)
+![](./figure-markdown_hw4/unnamed-chunk-4-2.png)
 
     qplot(chlorides, free.sulfur.dioxide, data=wine, color=factor(clust2$cluster))
 
-![](./figure-markdown_strict/unnamed-chunk-4-3.png)
+![](./figure-markdown_hw4/unnamed-chunk-4-3.png)
 
     qplot(total.sulfur.dioxide , density , data=wine, color=factor(clust2$cluster))
 
-![](./figure-markdown_strict/unnamed-chunk-4-4.png)
+![](./figure-markdown_hw4/unnamed-chunk-4-4.png)
 
     qplot( pH , sulphates , data=wine, color=factor(clust2$cluster))
 
-![](./figure-markdown_strict/unnamed-chunk-4-5.png)
+![](./figure-markdown_hw4/unnamed-chunk-4-5.png)
 
     qplot( pH ,  alcohol , data=wine, color=factor(clust2$cluster))
 
-![](./figure-markdown_strict/unnamed-chunk-4-6.png)
+![](./figure-markdown_hw4/unnamed-chunk-4-6.png)
 
 ###### Based on the above clusters, we can see how many white/red wine in each cluster as below
 
@@ -81,27 +81,27 @@
 
     qplot(fixed.acidity, volatile.acidity, data=wine, color=factor(clust7$cluster))
 
-![](./figure-markdown_strict/unnamed-chunk-6-1.png)
+![](./figure-markdown_hw4/unnamed-chunk-6-1.png)
 
     qplot(citric.acid, residual.sugar, data=wine, color=factor(clust7$cluster))
 
-![](./figure-markdown_strict/unnamed-chunk-6-2.png)
+![](./figure-markdown_hw4/unnamed-chunk-6-2.png)
 
     qplot(chlorides, free.sulfur.dioxide, data=wine, color=factor(clust7$cluster))
 
-![](./figure-markdown_strict/unnamed-chunk-6-3.png)
+![](./figure-markdown_hw4/unnamed-chunk-6-3.png)
 
     qplot(total.sulfur.dioxide , density , data=wine, color=factor(clust7$cluster))
 
-![](./figure-markdown_strict/unnamed-chunk-6-4.png)
+![](./figure-markdown_hw4/unnamed-chunk-6-4.png)
 
     qplot( pH , sulphates , data=wine, color=factor(clust7$cluster))
 
-![](./figure-markdown_strict/unnamed-chunk-6-5.png)
+![](./figure-markdown_hw4/unnamed-chunk-6-5.png)
 
     qplot( pH ,  alcohol , data=wine, color=factor(clust7$cluster))
 
-![](./figure-markdown_strict/unnamed-chunk-6-6.png)
+![](./figure-markdown_hw4/unnamed-chunk-6-6.png)
 
 ###### From all of the above graphs, we cannot see the variable named total.sulfur.dioxide also corresponding to the wine qulity. However, let’s see the accurary with repect to quality.
 
@@ -197,7 +197,7 @@
 
     plot(X, pch=19, col=rgb(0.3,0.3,0.3,0.3))
 
-![](./figure-markdown_strict/unnamed-chunk-9-1.png)
+![](./figure-markdown_hw4/unnamed-chunk-9-1.png)
 
     cor(X)
 
@@ -241,17 +241,17 @@
     # a quick heatmap visualization
     ggcorrplot::ggcorrplot(cor(X), hc.order = TRUE)
 
-![](./figure-markdown_strict/unnamed-chunk-9-2.png)
+![](./figure-markdown_hw4/unnamed-chunk-9-2.png)
 
     pc_X = prcomp(X, rank=7, scale=TRUE)
     #summary(pc_X)
     plot(pc_X, type="l")
 
-![](./figure-markdown_strict/unnamed-chunk-10-1.png)
+![](./figure-markdown_hw4/unnamed-chunk-10-1.png)
 
     biplot(pc_X)
 
-![](./figure-markdown_strict/unnamed-chunk-11-1.png)
+![](./figure-markdown_hw4/unnamed-chunk-11-1.png)
 
     #pc_X$rotation
     round(pc_X$rotation[,1:7],2) 
@@ -284,7 +284,7 @@
       stat_ellipse(geom="polygon", col="black",alpha=0.5) +
       geom_point(shape=21, col="black")
 
-![](./figure-markdown_strict/unnamed-chunk-13-1.png)
+![](./figure-markdown_hw4/unnamed-chunk-13-1.png)
 \#\#\#\#\#\# From the above graph, we can clear see that the two
 clusters well correspond to wine colors. Therefore, PCA is a good
 predictor for wine color.
@@ -295,25 +295,25 @@ predictor for wine color.
       stat_ellipse(geom="polygon", col="black",alpha=0.5) +
       geom_point(shape=21, col="black")
 
-![](./figure-markdown_strict/unnamed-chunk-14-1.png)
+![](./figure-markdown_hw4/unnamed-chunk-14-1.png)
 
     ggplot(wine, aes(PC3, PC4, color=quality, fill=quality)) +
       stat_ellipse(geom="polygon", col="black",alpha=0.5) +
       geom_point(shape=21, col="black")
 
-![](./figure-markdown_strict/unnamed-chunk-14-2.png)
+![](./figure-markdown_hw4/unnamed-chunk-14-2.png)
 
     ggplot(wine, aes(PC5, PC6, color=quality, fill=quality)) +
       stat_ellipse(geom="polygon", col="black",alpha=0.5) +
       geom_point(shape=21, col="black")
 
-![](./figure-markdown_strict/unnamed-chunk-14-3.png)
+![](./figure-markdown_hw4/unnamed-chunk-14-3.png)
 
     ggplot(wine, aes(PC7, PC6, color=quality, fill=quality)) +
       stat_ellipse(geom="polygon", col="black",alpha=0.5) +
       geom_point(shape=21, col="black")
 
-![](./figure-markdown_strict/unnamed-chunk-14-4.png)
+![](./figure-markdown_hw4/unnamed-chunk-14-4.png)
 \#\#\#\#\#\# From the above graphs, we can see that none of them have a
 similar pattern as wine quality. Therefore, we cannot predict the
 quality from these chemical information.
@@ -581,7 +581,7 @@ quality from these chemical information.
     corsm <- cor(sm[,-1])
     ggcorrplot::ggcorrplot(corsm,hc.order = TRUE, pch.cex=0.1)
 
-![](./figure-markdown_strict/unnamed-chunk-19-1.png)
+![](./figure-markdown_hw4/unnamed-chunk-19-1.png)
 \#\#\#\#\#\# After pre-process the data, we have a look at the data
 correlation. After we processing the data, it seems that there are not
 columns that are highly correlated. Therefore, we can observe different
@@ -609,11 +609,11 @@ aspects of consumers now.
 
     plot(pc_XX, type="l")
 
-![](./figure-markdown_strict/unnamed-chunk-21-1.png)
+![](./figure-markdown_hw4/unnamed-chunk-21-1.png)
 
     biplot(pc_XX)
 
-![](./figure-markdown_strict/unnamed-chunk-22-1.png)
+![](./figure-markdown_hw4/unnamed-chunk-22-1.png)
 \#\#\#\#\#\# Based on the PCA results, we chose 6 components to explain
 47.4% of variation. From the biplot results, we can see that all the
 words are on similar direction.
@@ -826,7 +826,7 @@ words are on similar direction.
 
     itemFrequencyPlot(gc, topN=10, type="absolute", main="Item Frequency") 
 
-![](./figure-markdown_strict/unnamed-chunk-28-1.png)
+![](./figure-markdown_hw4/unnamed-chunk-28-1.png)
 
 ###### In the association rule analysis, we define support level is bigger than 0.01, and the confidence level is greater than 0.1. From below results, we can get more concise results.
 
@@ -3782,7 +3782,7 @@ words are on similar direction.
 
     plot(sub1, method='graph')
 
-![](./figure-markdown_strict/unnamed-chunk-36-1.png)
+![](./figure-markdown_hw4/unnamed-chunk-36-1.png)
 
 ### Problem 4 Text Mining: supervised model
 
@@ -3940,7 +3940,7 @@ test set.
     pca_train = prcomp(X1, rank=10, scale=TRUE)
     plot(pca_train,type="l") 
 
-![](./figure-markdown_strict/unnamed-chunk-39-1.png)
+![](./figure-markdown_hw4/unnamed-chunk-39-1.png)
 
     summary(pca_train)
 
@@ -4575,7 +4575,7 @@ work union parts - unclear
     pca_test = prcomp(X2, rank=10, scale=TRUE)
     plot(pca_test, type="l") 
 
-![](./figure-markdown_strict/unnamed-chunk-43-1.png)
+![](./figure-markdown_hw4/unnamed-chunk-43-1.png)
 
     summary(pca_test)
 
@@ -5469,11 +5469,11 @@ use these components for prediction.
                              data=tfidf_train, importance = TRUE) 
     plot(rf)
 
-![](./figure-markdown_strict/unnamed-chunk-48-1.png)
+![](./figure-markdown_hw4/unnamed-chunk-48-1.png)
 
     varImpPlot(rf, type=1)
 
-![](./figure-markdown_strict/unnamed-chunk-49-1.png)
+![](./figure-markdown_hw4/unnamed-chunk-49-1.png)
 \#\#\#\#\#\# From the random forest result, we can see PC3, PC4, PC1,
 PC6 are more important than PC5 and PC2 for the prediction. However, it
 cannot do the root mean square error test because the outcome is
