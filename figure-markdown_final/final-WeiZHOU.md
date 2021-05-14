@@ -64,7 +64,7 @@ Figure 1: Search Trends from Google data.
       geom_line(aes(x=Time,y=Freq, color=Term)) +
       theme(legend.position = "right")
 
-![](final-WeiZHOU_files/figure-markdown_strict/unnamed-chunk-1-1.png)
+![](./unnamed-chunk-1-1.png)
 
       scale_x_datetime(labels = date_format("%Y-%M"))
 
@@ -105,7 +105,7 @@ Figure2: Screen Plot of PCA
     pca = prcomp(X1, rank=20, scale=TRUE)
     plot(pca,type="l") 
 
-![](final-WeiZHOU_files/figure-markdown_strict/unnamed-chunk-2-1.png)
+![](./unnamed-chunk-2-1.png)
 
     #summary(pca)
 
@@ -480,7 +480,7 @@ Variables
 
     hist(firm3_final$Income.Before.Extraordinary.Items..Cash.Flow., freq=F, breaks=10, col="#47b8e0", main="Hist of Income Cash Flow", xlab = "Income Cash Flow")
 
-![](final-WeiZHOU_files/figure-markdown_strict/unnamed-chunk-4-1.png)
+![](./unnamed-chunk-4-1.png)
 
     #firm3_final$Clog <- log(firm3_final$'Income.Before.Extraordinary.Items..Cash.Flow.'+1)
     #hist(firm3_final$Clog, freq=F, breaks=10, col="#47b8e0", main="Hist of log(Income Cash Flow)", xlab="log(Income Cash Flow)")
@@ -586,7 +586,7 @@ component from 4 variables. Figure 4: Correlation Table
     #dev.off()
     corrplot(corfirm, method="circle", tl.cex=0.7)
 
-![](final-WeiZHOU_files/figure-markdown_strict/unnamed-chunk-5-1.png)
+![](./unnamed-chunk-5-1.png)
 
 Exploration of T-tests: From below t-test results, we can see that
 marketing titles and sales titles have significant influence on firm
@@ -1448,7 +1448,7 @@ LASSO Model Results
     plot(cvfit2)
     plot(cvfit3)
 
-![](final-WeiZHOU_files/figure-markdown_strict/unnamed-chunk-10-1.png)
+![](./unnamed-chunk-10-1.png)
 
     c(cvfit$lambda.min, cvfit$lambda.1se)
 
@@ -1634,7 +1634,7 @@ Figure 9: Random Forest Models with Three Different Outcomes
     varImpPlot(rforest2, type=1)
     varImpPlot(rforest3, type=1)
 
-![](final-WeiZHOU_files/figure-markdown_strict/unnamed-chunk-12-1.png)
+![](./unnamed-chunk-12-1.png)
 
 -   Outcome in Random Forest 1: sales growth
 -   Outcome in Random Forest 2: log of revenue
@@ -1678,7 +1678,7 @@ Figure 10: How Department Powers Influence Firm Performance
     partialPlot(rforest2, f_train,  'mdp_fa_5v', las=1)
     partialPlot(rforest3, f_train,  'mdp_fa_4v', las=1)
 
-![](final-WeiZHOU_files/figure-markdown_strict/unnamed-chunk-13-1.png)
+![](./unnamed-chunk-13-1.png)
 
 \#\#\#Appendix Sales Force Downsizing and Firm- Idiosyncratic Risk: The
 Contingent Role of Investors’ Screening and Firm’s Signaling Processes.
